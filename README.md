@@ -1,146 +1,89 @@
-# Ex.05 Design a Website for Server Side Processing
-## Date:26/12/2025
+# Ex09 Event Registration Web Application
+## Date 24.12.2025
 
 ## AIM:
- To design a website to calculate the power of a lamp filament in an incandescent bulb in the server side. 
-
-
-## FORMULA:
-P = I<sup>2</sup>R
-<br> P --> Power (in watts)
-<br> I --> Intensity
-<br> R --> Resistance
+To design, develop and deploy a web application for event registration.
 
 ## DESIGN STEPS:
 
 ### Step 1:
-Clone the repository from GitHub.
+Create a new frame.
 
 ### Step 2:
-Create Django Admin project.
+Select any one preset size of your choice.
 
 ### Step 3:
-Create a New App under the Django Admin project.
+Select the shapes you need.
 
 ### Step 4:
-Create python programs for views and urls to perform server side processing.
+Import images as needed.
 
 ### Step 5:
-Create a HTML file to implement form based input and output.
+Create pages based on your need and link them.
 
 ### Step 6:
+
+Validate the HTML and CSS code.
+
+### Step 6:
+
 Publish the website in the given URL.
 
-## PROGRAM :
-math.html
-```
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset='utf-8'>
-<meta http-equiv='X-UA-Compatible' content='IE=edge'>
-<title>Area of Surface</title>
-<meta name='viewport' content='width=device-width, initial-scale=1'>
-<style type="text/css">
-body {
-    background-color: #00ff11;
-}
-.edge {
-    width: 100%;
-    padding-top: 250px;
-    text-align: center;
-}
-.box {
-    display: inline-block;
-    border: thick dashed #ffffff;
-    width: 500px;
-    min-height: 300px;
-    font-size: 20px;
-    background-color: rgb(23, 53, 222);
-}
-.formelt {
-    color: rgb(9, 10, 11);
-    text-align: center;
-    margin-top: 7px;
-    margin-bottom: 6px;
-}
-h1 {
-    color: rgb(227, 176, 11);
-    padding-top: 20px;
-}
+## DESIGN TOOL:
+Figma
 
-</style>
-</head>
-<body>
-<div class="edge">
-    <div class="box">
-        <h1>Surface area of a Right Cylinder</h1>
-   <form method="POST">
-            {% csrf_token %}
-            <div class="formelt">
-                Radius: <input type="text" name="radius" value="{{r}}">m<br/>
-            </div>
-            <div class="formelt">
-                Height: <input type="text" name="height" value="{{h}}">m<br/>
-            </div>
-            <div class="formelt">
-                <input type="submit" value="Calculate"><br/>
-            </div>
-            <div class="formelt">
-                Area: <input type="text" name="area" value="{{area}}">m<sup>2</sup><br/>
-            </div>
-        </form>
-    </div>
+## CODE: 
+```
+HOME PAGE
+<div style="width: 421px; height: 860px; position: relative; background: #D0C722; overflow: hidden">
+  <img style="width: 391px; height: 78px; left: 19px; top: 55px; position: absolute" src="https://placehold.co/391x78" />
+  <div style="width: 287px; height: 90px; left: 57px; top: 403px; position: absolute; background: #4FEA1B"></div>
+  <div style="width: 202px; height: 77px; left: 107px; top: 430px; position: absolute; color: #171414; font-size: 40px; font-family: Inter; font-weight: 600; word-wrap: break-word">REGISTER</div>
+  <div style="width: 285px; height: 86px; left: 57px; top: 252px; position: absolute; background: #1BE647"></div>
+  <div style="width: 224px; height: 50px; left: 120px; top: 268px; position: absolute; color: #141111; font-size: 40px; font-family: Inter; font-weight: 600; word-wrap: break-word">LOGIN</div>
 </div>
-</body>
-</html>
-```
-views.py
-```
-from django.shortcuts import render
 
-def surfacearea(request):
-    context = {}
-    context['area'] = "0"
-    context['r'] = "0"
-    context['h'] = "0"
-    
-    if request.method == 'POST':
-        print("POST method is used")
-        
-        print('request.POST:', request.POST)
-        
-        r = request.POST.get('radius', '0') 
-        h = request.POST.get('height', '0') 
-        print('radius =', r)
-        print('height =', h)
-        
-        area = 2 * 3.14 * int(r) * int(h) + 2*3.14*int(r)*int(r)
-        context['area'] = area
-        context['r'] = r
-        context['h'] = h
-        print('Area =', area)
-    
-    return render(request, 'mathapp/math.html', context)
-```
-urls.py
-```
-from django.contrib import admin
-from django.urls import path
-from mathapp import views
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('areaofsurface/',views.surfacearea,name="areaofsurface"),
-    path('',views.surfacearea,name="areaofsurfaceroot")
-]
-```
-## SERVER SIDE PROCESSING:
-<img width="1920" height="1080" alt="Screenshot (63)" src="https://github.com/user-attachments/assets/e1f8b65f-b852-4031-ab6b-ec2a45444bcd" />
+PAGE:1
 
+<div style="width: 439.41px; height: 861.43px; position: relative; background: #DD2929; overflow: hidden">
+  <img style="width: 610.50px; height: 918px; left: -128.50px; top: -12.97px; position: absolute" src="https://placehold.co/611x918" />
+  <div style="width: 332.87px; height: 79.46px; left: 47.54px; top: 67.71px; position: absolute; color: #4FEA1B; font-size: 40px; font-family: Inter; font-weight: 600; word-wrap: break-word">SPORTS EVENT</div>
+  <div style="width: 209.94px; height: 37.66px; left: 120.06px; top: 178.03px; position: absolute; color: #1BE647; font-size: 40px; font-family: Inter; font-weight: 600; word-wrap: break-word">CRICKET</div>
+  <div style="width: 250.92px; height: 46.59px; left: 120.08px; top: 279.03px; position: absolute; color: #1BE647; font-size: 40px; font-family: Inter; font-weight: 600; word-wrap: break-word">FOOTBALL</div>
+  <div style="width: 305.96px; height: 26.50px; left: 109.04px; top: 393.03px; position: absolute; color: #4FEA1B; font-size: 40px; font-family: Inter; font-weight: 600; word-wrap: break-word">BATMITATION</div>
+  <div style="width: 321.92px; height: 46.47px; left: 117.08px; top: 542.03px; position: absolute; color: #2ADF51; font-size: 40px; font-family: Inter; font-weight: 600; word-wrap: break-word">VOLLEYBALL</div>
+</div>
 
-## HOMEPAGE:
-<img width="1920" height="1080" alt="Screenshot (62)" src="https://github.com/user-attachments/assets/6cf4bcf7-bc96-4596-b77d-530438a873c4" />
+PAGE:2
+
+<div style="width: 426.02px; height: 852.01px; position: relative; background: #E9E141; overflow: hidden">
+  <img style="width: 1276.44px; height: 852.04px; left: -0.01px; top: -0.03px; position: absolute" src="https://placehold.co/1276x852" />
+  <div style="width: 336px; height: 45.99px; left: 66.01px; top: 64.01px; position: absolute; color: #EA1B1F; font-size: 20px; font-family: Inter; font-weight: 600; word-wrap: break-word">SPORTS EVENT REGISTERATION</div>
+  <div style="width: 148px; height: 68px; left: 38px; top: 158px; position: absolute; color: white; font-size: 32px; font-family: Inter; font-weight: 600; word-wrap: break-word">NAME</div>
+  <div style="width: 131px; height: 41px; left: 39px; top: 266px; position: absolute; color: white; font-size: 32px; font-family: Inter; font-weight: 600; word-wrap: break-word">AGE</div>
+  <div style="left: 38px; top: 380px; position: absolute; color: white; font-size: 32px; font-family: Inter; font-weight: 600; word-wrap: break-word">GENDER</div>
+  <div style="width: 143px; height: 50px; left: 39px; top: 483px; position: absolute; color: white; font-size: 32px; font-family: Inter; font-weight: 600; word-wrap: break-word">E-MAIL</div>
+  <div style="width: 130px; height: 49px; left: 39px; top: 613px; position: absolute; color: white; font-size: 32px; font-family: Inter; font-weight: 600; word-wrap: break-word">PH.NO</div>
+  <div style="width: 214px; height: 33.99px; left: 176px; top: 158px; position: absolute; background: #D9D9D9"></div>
+  <div style="width: 214px; height: 30.99px; left: 176px; top: 266px; position: absolute; background: #D9D9D9"></div>
+  <div style="width: 214px; height: 30.99px; left: 176px; top: 380px; position: absolute; background: #D9D9D9"></div>
+  <div style="width: 214px; height: 24.99px; left: 176px; top: 483px; position: absolute; background: #D9D9D9"></div>
+  <div style="width: 220px; height: 30.99px; left: 170px; top: 613px; position: absolute; background: #D9D9D9"></div>
+  <div style="width: 222px; height: 53.99px; left: 114px; top: 741px; position: absolute; background: #887068"></div>
+  <div style="width: 159px; height: 23px; left: 154px; top: 756px; position: absolute; color: #33D833; font-size: 24px; font-family: Inter; font-weight: 600; word-wrap: break-word">REGISTER</div>
+</div>
+
+PAGE:3
+
+<div style="width: 423px; height: 852px; position: relative; background: white; overflow: hidden">
+  <img style="width: 1317px; height: 943px; left: -759px; top: 0px; position: absolute" src="https://placehold.co/1317x943" />
+  <div style="width: 287px; height: 156px; left: 55px; top: 252px; position: absolute; color: #DD2929; font-size: 64px; font-family: Inter; font-weight: 600; word-wrap: break-word">THANK<br/>        YOU</div>
+</div>
+```
+
+## OUTPUT:
+<img width="1331" height="710" alt="Screenshot 2025-12-24 133537" src="https://github.com/user-attachments/assets/e9bb099d-27dc-442a-9947-a8a3e1e26b87" />
 
 
 ## RESULT:
-The program for performing server side processing is completed successfully.
+The program to design, develop and deploy a web application for event registration is completed successfully.
